@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>files</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h3 text-center>Record any issues</h3>
+  <ion-item *ngIf="myPlatform === 4" class="image-upload">
+    <ion-icon name="md-images" item-left></ion-icon>
+    {{attachedPhotoCount > 0 ? attachedPhotoCount + ' photos attached': 'Attach photo(s)'}}
+      <input type="file" multiple (change)="addImages(input)" #input />
+    <ion-icon name="md-camera" item-right></ion-icon>
+  </ion-item>
+  <img [src]="urlVariable" />
+  <!--<ion-item *ngIf="myPlatform === 4">
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let file_src of file_srcs">
+          <img [attr.src]='file_src' alt=""/>
+          <ion-icon class="image-delete" name="md-close-circle"
+          (click)="removeImage(file_src)"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>-->
+</ion-content>

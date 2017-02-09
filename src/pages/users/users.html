@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>users</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button (click)="getUser()">
+    Get Current user
+  </button>
+  <p>Current user: {{currentUsername}}</p>
+  <button ion-button (click)="loginUser()">
+    Log in
+  </button>
+  <button ion-button (click)="loginAnonUser()">
+    anonymous Log in
+  </button>
+  <button ion-button (click)="logoutUser()">
+    Logout
+  </button>
+  <button ion-button (click)="getAllUsers()">
+    Get all users
+  </button>
+  <!--<ion-list inset>
+    <button ion-item *ngFor="let user of allUsers">
+      {{ user.attibute.username }}
+    </button>
+  </ion-list>-->
+</ion-content>

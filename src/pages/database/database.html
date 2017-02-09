@@ -1,0 +1,31 @@
+<!--
+  Generated template for the Database page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>database</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  {{dvt}}
+
+  <button ion-button (click)="getAll()">
+    Get All
+  </button>
+  <h2>Orders</h2>
+  <ion-list inset>
+    <button ion-item *ngFor="let order of myOrders" (click)="orderSelected(order)">
+      {{ order.id }}
+    </button>
+  </ion-list>
+  <pre>{{myOrders | json}}</pre>
+</ion-content>
