@@ -8,6 +8,7 @@ import { DatabasePage } from '../pages/database/database';
 import { SecurityPage } from '../pages/security/security';
 import { UsersPage } from '../pages/users/users';
 import { FilesPage } from '../pages/files/files';
+import { ImagesPage } from '../pages/images/images';
 
 import * as Parse from 'parse';
 
@@ -31,7 +32,8 @@ export class MyApp {
       { title: 'Database', component: DatabasePage },
       { title: 'Security', component: SecurityPage },
       { title: 'Users', component: UsersPage },
-      { title: 'Files', component: FilesPage }
+      { title: 'Files', component: FilesPage },
+      { title: 'Images', component: ImagesPage }
     ];
 
   }

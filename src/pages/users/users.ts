@@ -54,7 +54,8 @@ export class UsersPage {
   }
 
   loginUser() {
-    Parse.User.logIn("dtrain", "123").then((user)=> {
+    //Parse.User.logIn("dtrain", "123").then((user)=> {
+      Parse.User.logIn("trump", "123").then((user)=> {
       this.currentUser = user;
       this.currentUsername = user.get("username");
       console.log("logged in user " + this.currentUsername);
@@ -78,17 +79,20 @@ export class UsersPage {
     }, (err)=>{
       console.error(err);
     })
-    
+
 
   }
 
   getAllUsers() {
+    console.log("just getting all users");
     var q = new Parse.Query("User");
     q.find().then((users)=> {
       this.allUsers = users;
       for (var i=0; i<users.length; i++) {
         console.log(users[i].get("username"));
       }
+    },(err)=> {
+      console.error(err);
     })
   }
 }

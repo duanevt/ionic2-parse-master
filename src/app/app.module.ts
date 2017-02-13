@@ -7,6 +7,7 @@ import { DatabasePage } from '../pages/database/database';
 import { SecurityPage } from '../pages/security/security';
 import { UsersPage } from '../pages/users/users';
 import { FilesPage } from '../pages/files/files';
+import { ImagesPage } from '../pages/images/images';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilesPage } from '../pages/files/files';
     DatabasePage,
     SecurityPage,
     UsersPage,
-    FilesPage
+    FilesPage,
+    ImagesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,7 +31,8 @@ import { FilesPage } from '../pages/files/files';
     DatabasePage,
     SecurityPage,
     UsersPage,
-    FilesPage
+    FilesPage,
+    ImagesPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
