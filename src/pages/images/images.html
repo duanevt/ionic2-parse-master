@@ -11,4 +11,16 @@
 <ion-content padding>
 <h2>Working with images</h2>
 <h3>Image Picker</h3>
+<button ion-button (click)="openGallery()">
+  Image Picker
+</button>
+<ion-grid>
+  <ion-row *ngFor="let row of grid">
+    <ion-col width-50 *ngFor="let file_uri of row">
+      <img src="{{file_uri}}" />
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<p>image from server</p>
+<img [src]="urlVariable" />
 </ion-content>

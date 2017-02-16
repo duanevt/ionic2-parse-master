@@ -46,11 +46,11 @@ export class MyApp {
       Splashscreen.hide();
 
       // Initialise parse SDK
-      Parse.initialize("udemyAppID");
-      Parse.serverURL = 'https://parse-server-codecraft-dvt.herokuapp.com/parse';
+      // Parse.initialize("udemyAppID");
+      // Parse.serverURL = 'https://parse-server-codecraft-dvt.herokuapp.com/parse';
 
-      // Parse.initialize("AppId1");
-      // Parse.serverURL = 'https://parsewithionic2-duanev1.c9users.io/app1';
+      Parse.initialize("AppId1");
+      Parse.serverURL = 'https://parsewithionic2-duanev1.c9users.io/app1';
 
     });
   }
