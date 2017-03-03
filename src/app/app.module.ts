@@ -8,6 +8,8 @@ import { SecurityPage } from '../pages/security/security';
 import { UsersPage } from '../pages/users/users';
 import { FilesPage } from '../pages/files/files';
 import { ImagesPage } from '../pages/images/images';
+import { ImagePickerPage } from '../pages/image-picker/image-picker';
+import { CameraPluginPage } from '../pages/camera-plugin/camera-plugin';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ImagesPage } from '../pages/images/images';
     SecurityPage,
     UsersPage,
     FilesPage,
-    ImagesPage
+    ImagesPage,
+    ImagePickerPage,
+    CameraPluginPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,7 +36,9 @@ import { ImagesPage } from '../pages/images/images';
     SecurityPage,
     UsersPage,
     FilesPage,
-    ImagesPage
+    ImagesPage,
+    ImagePickerPage,
+    CameraPluginPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

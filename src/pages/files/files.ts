@@ -39,7 +39,7 @@ export class FilesPage {
     var file = input.files[0];
     var name = file.name;
     console.log("file name is " + name);
-
+    console.log(typeof file);
     var parseFile = new Parse.File(name, file);
     parseFile.save().then(()=>{
       console.log(parseFile.url());

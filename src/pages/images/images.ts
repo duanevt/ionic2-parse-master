@@ -17,6 +17,7 @@ export class ImagesPage {
   private images: Array<string>;
   private grid: Array<Array<string>>;
   urlVariable: string;
+  dvt_img: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
@@ -24,16 +25,21 @@ export class ImagesPage {
     console.log('ionViewDidLoad ImagesPage');
   }
 
-  private openGallery (): void {
+  private openGallery (outputType: number = 0): void {
+    // default output = 0 = FILE_URI
+    //                  1 = BASE64_STRING
   let options = {
     maximumImagesCount: 8,
-    width: 500,
-    height: 500,
-    quality: 75
+    width: 200,
+    height: 200,
+    quality: 50,
+    outputType: 0
   }
-
+  console.log("getPictures about to be called");
   ImagePicker.getPictures(options).then(
     (file_uris) => {
+      console.log("got pics")
+      this.dvt_img = 'data:image/jpeg;base64,'+file_uris[0];
       this.images = file_uris;
       this.grid = Array(Math.ceil(this.images.length/2));
       let rowNum = 0;
@@ -52,14 +58,17 @@ export class ImagesPage {
 
     		rowNum++;
     	}
-
-      // var parseFile = new Parse.File("dvtImagePicked", this.images[0]);
-      // parseFile.save().then(()=>{
-      //   console.log(parseFile.url());
-      //   this.urlVariable = parseFile.url();
-      // },(err)=>{
-      //   console.error(err);
-      // })
+      console.log("now create parse file")
+      console.log(typeof this.images[0])
+      console.log(this.images[0]);
+      var parseFile = new Parse.File("dvtImagePicked", this.images[0]);
+      //var parseFile = new Parse.File("dvt64ImagePicked.jpg", {base64: this.images[0]} );
+      parseFile.save().then(()=>{
+        console.log(parseFile.url());
+        this.urlVariable = parseFile.url();
+      },(err)=>{
+        console.error(err);
+      })
     },
     err => console.log('uh oh no image picking')
   );

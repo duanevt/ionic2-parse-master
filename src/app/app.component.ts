@@ -9,6 +9,8 @@ import { SecurityPage } from '../pages/security/security';
 import { UsersPage } from '../pages/users/users';
 import { FilesPage } from '../pages/files/files';
 import { ImagesPage } from '../pages/images/images';
+import { ImagePickerPage } from '../pages/image-picker/image-picker';
+import { CameraPluginPage } from '../pages/camera-plugin/camera-plugin';
 
 import * as Parse from 'parse';
 
@@ -33,7 +35,9 @@ export class MyApp {
       { title: 'Security', component: SecurityPage },
       { title: 'Users', component: UsersPage },
       { title: 'Files', component: FilesPage },
-      { title: 'Images', component: ImagesPage }
+      { title: 'Images', component: ImagesPage },
+      { title: 'Image Picker', component: ImagePickerPage },
+      { title: 'Camera Plugin', component: CameraPluginPage }
     ];
 
   }
